@@ -1,0 +1,86 @@
+body {
+  margin: 0 auto;
+}
+
+:root {
+  --yellow: #e3b734;
+  --red: #cd466a;
+  --purple: #7655cf;
+  --blue: #5bc1d3;
+  --green: #67b587;
+}
+
+main {
+  width: 100%;
+}
+
+main#home {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--yellow);
+  background-image: url("../qrcode.png");
+  background-size: 80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+main#home.yellow {
+  background-color: var(--yellow);
+}
+main#home.red {
+  background-color: var(--red);
+}
+main#home.purple {
+  background-color: var(--purple);
+}
+main#home.blue {
+  background-color: var(--blue);
+}
+main#home.green {
+  background-color: var(--green);
+}
+
+ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+}
+
+li {
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li#yellow {
+  background-color: var(--yellow);
+}
+li#red {
+  background-color: var(--red);
+}
+li#purple {
+  background-color: var(--purple);
+}
+li#blue {
+  background-color: var(--blue);
+}
+li#green {
+  background-color: var(--green);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  height: fit-content;
+  padding: 20px;
+  cursor: pointer;
+}
+
+svg.lucide {
+  stroke: white;
+  width: 64px;
+  height: 64px;
+}
