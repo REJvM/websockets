@@ -80,7 +80,15 @@ button {
 }
 
 svg.lucide {
+  top: -10%;
   stroke: white;
   width: 64px;
   height: 64px;
+  position: absolute;
+}
+
+div#icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }

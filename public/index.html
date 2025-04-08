@@ -8,6 +8,23 @@
   </head>
   <body>
     <main id="home">
+        <div id="icons">
+            <i data-lucide="bomb" class="bomb"></i>
+            <i data-lucide="scan-heart" class="scan-heart"></i>
+            <i data-lucide="bone" class="bone"></i>
+            <i data-lucide="bird" class="bird"></i>
+            <i data-lucide="carrot" class="carrot"></i>
+            <i data-lucide="caravan" class="caravan"></i>
+            <i data-lucide="castle" class="castle"></i>
+            <i data-lucide="cigarette-off" class="cigarette-off"></i>
+            <i data-lucide="cherry" class="cherry"></i>
+            <i data-lucide="flame-kindling" class="flame-kindling"></i>
+            <i data-lucide="tree-palm" class="tree-palm"></i>
+            <i data-lucide="sun" class="sun"></i>
+            <i data-lucide="tractor" class="tractor"></i>
+            <i data-lucide="shirt" class="shirt"></i>
+            <i data-lucide="fire-extinguisher" class="fire-extinguisher"></i>
+        </div>
     </main>
 
     <script
@@ -22,15 +39,30 @@
         const socket = io();
 
         socket.on("change-color", (color) => {
-            console.log(color);
             const main = document.querySelector("#home");
             main.className = color;
         });
-        
-        socket.on("change-icon", (icon) => {
-            console.log(icon);
-        });
 
+        function getRandomArbitrary(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        socket.on("change-icon", (icon) => {
+            const svg = document.querySelector("."+ icon);
+            const random = getRandomArbitrary(10, 90);
+            svg.style.left = random + 'vw';
+            
+            svg.animate(
+                {
+                    translate: ["0 0vh", "0 100vh"],
+                    opacity: [1, 0],
+                },
+                {
+                    duration: 2000,
+                    iterations: 1
+                },
+            );
+        });
     </script>
   </body>
 </html>

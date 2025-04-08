@@ -10,29 +10,29 @@
        <form id="form" action="">
         <ul>
             <li id="yellow">
-                <button type="submit" value="yellow-bomb"><i data-lucide="bomb"></i></button>
-                <button type="submit" value="yellow-scan-heart"><i data-lucide="scan-heart"></i></button>
-                <button type="submit" value="yellow-bone"><i data-lucide="bone"></i></button>
+                <button type="submit" value="yellow bomb"><i data-lucide="bomb"></i></button>
+                <button type="submit" value="yellow scan-heart"><i data-lucide="scan-heart"></i></button>
+                <button type="submit" value="yellow bone"><i data-lucide="bone"></i></button>
             </li>
             <li id="red">
-                <button type="submit" value="red-bird"><i data-lucide="bird"></i></button>
-                <button type="submit" value="red-carrot"><i data-lucide="carrot"></i></button>
-                <button type="submit" value="red-caravan"><i data-lucide="caravan"></i></button>
+                <button type="submit" value="red bird"><i data-lucide="bird"></i></button>
+                <button type="submit" value="red carrot"><i data-lucide="carrot"></i></button>
+                <button type="submit" value="red caravan"><i data-lucide="caravan"></i></button>
             </li>
             <li id="purple">
-                <button type="submit" value="purple-castle"><i data-lucide="castle"></i></button>
-                <button type="submit" value="purple-cigarette-off"><i data-lucide="cigarette-off"></i></button>
-                <button type="submit" value="purple-cherry"><i data-lucide="cherry"></i></button>
+                <button type="submit" value="purple castle"><i data-lucide="castle"></i></button>
+                <button type="submit" value="purple cigarette-off"><i data-lucide="cigarette-off"></i></button>
+                <button type="submit" value="purple cherry"><i data-lucide="cherry"></i></button>
             </li>
             <li id="blue">
-                <button type="submit" value="blue-flame-kindling"><i data-lucide="flame-kindling"></i></button>
-                <button type="submit" value="blue-tree-palm"><i data-lucide="tree-palm"></i></button>
-                <button type="submit" value="blue-sun"><i data-lucide="sun"></i></button>
+                <button type="submit" value="blue flame-kindling"><i data-lucide="flame-kindling"></i></button>
+                <button type="submit" value="blue tree-palm"><i data-lucide="tree-palm"></i></button>
+                <button type="submit" value="blue sun"><i data-lucide="sun"></i></button>
             </li>
             <li id="green">
-                <button type="submit" value="green-tractor"><i data-lucide="tractor"></i></button>
-                <button type="submit" value="green-shirt"><i data-lucide="shirt"></i></button>
-                <button type="submit" value="green-fire-extinguisher"><i data-lucide="fire-extinguisher"></i></button>
+                <button type="submit" value="green tractor"><i data-lucide="tractor"></i></button>
+                <button type="submit" value="green shirt"><i data-lucide="shirt"></i></button>
+                <button type="submit" value="green fire-extinguisher"><i data-lucide="fire-extinguisher"></i></button>
             </li>
         </ul>
       </form>
@@ -55,16 +55,9 @@
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             let value = event.submitter.value;
-            let array = value.split("-");
-            console.log(array);
+            let array = value.split(" ");
             socket.emit("change", array[0], array[1]);
         });
-
-                
-        socket.on("change-icon", (icon) => {
-            console.log(icon);
-        });
-
     </script>
   </body>
 </html>
